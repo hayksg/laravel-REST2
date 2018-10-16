@@ -90,4 +90,9 @@ class PollController extends Controller
     public function errors() {
         return response()->json(['msg' => 'Payment is required.'], 402); // Payment is required. - for example
     }
+
+    public function questions(Request $request, Poll $poll) {
+        $questions = $poll->questions;
+        return response()->json($questions, 200);
+    }
 }

@@ -26,3 +26,5 @@ Route::any('errors', 'PollController@errors');
 Route::apiResource('questions', QuestionController::class, [
     'excerpt' => ['create', 'edit']
 ]);
+
+Route::get('polls/{poll}/questions', 'PollController@questions');
